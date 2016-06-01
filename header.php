@@ -1,0 +1,56 @@
+  
+<?php include("application.php"); ?> 
+    <div class="page-header text-center head">
+            <font color="midnightblue">
+            <h1 class="hh1"><b>Departmental Forum</b></h1>
+                </font>
+    </div>
+   
+    <nav class="navbar navbar-default navbar-fnt navbar-background" style="margin:10px;">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#head">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button></div>
+                    
+                    
+                    <a class="navbar-brand" href="index.php">
+                        Walchand College Of Engg,Sangli.
+                    </a>
+                
+                    </div>
+       
+                <ul class="nav navbar-nav nav navbar-right" style="margin-right:10px;">
+                    <li>
+                        <a href="index.php">
+                        <span class="glyphicon glyphicon-home"></span>Home</a>
+                    </li>
+                    <?php 
+                        if(session_id() == ''){
+                            session_start();
+                        }
+                    if(!isset($_SESSION['uname']) ){ ?>
+                       
+                    <li>
+                        <a href="Login.php">Login</a>
+                    </li>
+                    <li>
+                        <a href="register.php">Signup</a>
+                    </li>
+                    <?php 
+                        }
+                        else { ?>
+                        <li><a href="#"><b>Hello <?php echo $_SESSION['uname']; ?></b></a></li>
+                        <li>
+                            <a href="logout.php">Logout</a>
+                        </li>
+                     <?php }
+                     ?>
+                    
+                    <li>
+                        <a href="Contactus.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
